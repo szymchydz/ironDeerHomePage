@@ -20,12 +20,19 @@
 </head>
 <body>
   <nav class="navbar">
-    <a href="#charakter" class="nav-link">Charakter</a>
-    <a href="#galeria" class="nav-link">Galeria</a>
-    <a href="#cennik" class="nav-link">Cennik</a>
-    <a href="#formularz" class="nav-link">Formularz</a>
-    <a href="#kontakt" class="nav-link">Kontakt</a>
-    <a href="#dokumenty" class="nav-link">Dokumenty</a>
+    <div class="nav-links">
+      <a href="#charakter" class="nav-link">Charakter</a>
+      <a href="#galeria" class="nav-link">Galeria</a>
+      <a href="#cennik" class="nav-link">Cennik</a>
+      <a href="#formularz" class="nav-link">Formularz</a>
+      <a href="#kontakt" class="nav-link">Kontakt</a>
+      <a href="#dokumenty" class="nav-link">Dokumenty</a>
+    </div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -77,9 +84,9 @@
           <tr><th>Usługa</th><th>Cena</th></tr>
         </thead>
         <tbody>
-          <tr><td>Sesja zdjęciowa (do 4h)</td><td><strong>150 zł</strong></td></tr>
-          <tr><td>Wynajem na cały dzień</td><td><strong>300 zł</strong></td></tr>
-          <tr><td>Obecność kierowcy/statysty</td><td><strong>100 zł/h</strong></td></tr>
+          <tr><td data-label="Usługa">Sesja zdjęciowa (do 4h)</td><td data-label="Cena"><strong>150 zł</strong></td></tr>
+          <tr><td data-label="Usługa">Wynajem na cały dzień</td><td data-label="Cena"><strong>300 zł</strong></td></tr>
+          <tr><td data-label="Usługa">Obecność kierowcy/statysty</td><td data-label="Cena"><strong>100 zł/h</strong></td></tr>
         </tbody>
       </table>
       <p class="transport-info">Transport: do 15 km gratis, powyżej 15 km – 1,30 zł/km</p>

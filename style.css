@@ -42,6 +42,7 @@ body::before {
   align-items: center;
   text-align: center;
   z-index: 2;
+  padding-top: 60px;
 }
 .hero h1,
 .hero p,
@@ -393,11 +394,15 @@ footer {
   top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
-  padding: 15px 0;
+  padding: 15px 20px;
   text-align: center;
   z-index: 1000;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
   gap: 20px;
 }
 .nav-link {
@@ -410,6 +415,19 @@ footer {
 }
 .nav-link:hover {
   background: #ff7300;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
 }
 .cookie-banner {
   position: fixed;
@@ -478,9 +496,30 @@ footer {
   .box {
     padding: 20px;
   }
-  td {
-    font-size: 16px;
+  table {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
     padding: 10px;
+  }
+  td {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    border-bottom: none;
+  }
+  td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    color: #ff7300;
   }
   .lightbox-nav {
     width: 50px;
@@ -502,6 +541,21 @@ footer {
   }
   .custom-lightbox img {
     max-height: 80vh;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
   }
 }
 @media (max-width: 480px) {
@@ -529,6 +583,12 @@ footer {
     width: 35px;
     height: 35px;
     font-size: 25px;
+  }
+  .cookie-banner {
+    flex-direction: column;
+  }
+  .cookie-banner p {
+    margin-bottom: 10px;
   }
 }
 @media (min-width: 1200px) {
