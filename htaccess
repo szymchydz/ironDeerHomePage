@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.irondeer\.pl [NC]
+RewriteRule ^(.*)$ https://irondeer.pl/$1 [L,R=301]

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iron Deer – Wynajem Klasycznego Motocykla Honda CB350F</title>
+  <meta name="description" content="Wynajem klasycznego motocykla Honda CB350F – idealny na plan filmowy, sesje zdjęciowe, reklamy i eventy. Iron Deer Moto Wynajem. Zarezerwuj online!">
+  <meta name="keywords" content="wynajem motocykla, Honda CB350F, motocykl retro, sesje zdjęciowe, reklamy, plan filmowy">
+  <meta property="og:title" content="Iron Deer – Wynajem Motocykla Honda CB350F">
+  <meta property="og:description" content="Styl lat 70. w Twoim projekcie. Wynajem klasycznego motocykla Honda CB350F. Film, sesja, event – sprawdź ofertę.">
+  <meta property="og:image" content="assets/Hero.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="canonical" href="https://www.irondeer.pl/" />
+
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>IRON <span>DEER</span></h1>
+    <p>MOTOCYKLE NA PLAN | SESJE | REKLAMY | FILMY | EVENTY</p>
+    <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" class="btn-zarezerwuj">ZAREZERWUJ</a>
+    <a href="#charakter" class="scroll-down" aria-label="Przewiń w dół">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </section>
+
+  <!-- Charakter -->
+  <section id="charakter">
+    <div class="box">
+      <h2>Charakter i Zastosowanie</h2>
+      <p><strong>Honda CB350F z 1975 roku</strong> – klasyczny motocykl w stylu café racer, gotowy na sesje, reklamy i eventy.</p>
+      <ul>
+        <li>Sesje zdjęciowe – moda, lifestyle, retro</li>
+        <li>Filmy, reklamy, teledyski</li>
+        <li>Eventy, prezentacje marek</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section id="galeria">
+    <div class="box">
+      <h2>Galeria</h2>
+      <div class="gallery">
+        <a href="assets/gallery/gallery7.jpg" data-lightbox="moto"><img src="assets/gallery/gallery7.jpg" alt="Honda CB350F - widok z boku"></a>
+        <a href="assets/gallery/gallery8.jpg" data-lightbox="moto"><img src="assets/gallery/gallery8.jpg" alt="Honda CB350F - detale"></a>
+        <a href="assets/gallery/gallery9.jpg" data-lightbox="moto"><img src="assets/gallery/gallery9.jpg" alt="Honda CB350F - zbliżenie"></a>
+        <a href="assets/gallery/gallery4.jpg" data-lightbox="moto"><img src="assets/gallery/gallery4.jpg" alt="Honda CB350F - silnik"></a>
+        <a href="assets/gallery/gallery5.jpg" data-lightbox="moto"><img src="assets/gallery/gallery5.jpg" alt="Honda CB350F - kierownica"></a>
+        <a href="assets/gallery/gallery6.jpg" data-lightbox="moto"><img src="assets/gallery/gallery6.jpg" alt="Honda CB350F - full view"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cennik -->
+  <section id="cennik">
+    <div class="box">
+      <h2>Oferta i Cennik</h2>
+      <table>
+        <thead>
+          <tr><th>Usługa</th><th>Cena</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sesja zdjęciowa (do 4h)</td><td><strong>150 zł</strong></td></tr>
+          <tr><td>Wynajem na cały dzień</td><td><strong>300 zł</strong></td></tr>
+          <tr><td>Obecność kierowcy/statysty</td><td><strong>100 zł/h</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="transport-info">Transport: do 15 km gratis, powyżej 15 km – 1,30 zł/km</p>
+      <div class="cta-center">
+        <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" class="btn-zarezerwuj">ZAREZERWUJ</a>
+      </div>
+    </div>
+  </section>
+
+ 
+ 
+<!-- Formularz -->
+<section id="formularz">
+  <div class="box form-section">
+    <h2 class="form-title">Formularz Kontaktowy</h2>
+    <form action="send.php" method="POST" enctype="multipart/form-data" class="contact-form">
+      <!-- Honeypot -->
+      <input type="text" name="firma" style="display:none">
+
+      <label for="name" class="sr-only">Imię</label>
+      <input type="text" id="name" name="Imię" placeholder="Imię" required class="form-input">
+
+      <label for="phone" class="sr-only">Telefon</label>
+      <input type="tel" id="phone" name="Telefon" placeholder="Telefon" required class="form-input">
+
+      <label for="email" class="sr-only">Email</label>
+      <input type="email" id="email" name="Email" placeholder="Email" required class="form-input">
+
+      <label for="message" class="sr-only">Wiadomość</label>
+      <textarea id="message" name="Wiadomość" placeholder="Wiadomość" required class="form-input form-textarea"></textarea>
+
+      <button type="submit" class="btn-primary">WYŚLIJ</button>
+    </form>
+
+    <div class="form-feedback">
+  <?php
+    if (isset($_GET['error'])) {
+      echo "<p style='color:#f00;'>Wystąpił błąd podczas wysyłania.</p>";
+    }
+    if (isset($_GET['error']) && $_GET['error'] === 'invalid_email') {
+      echo "<p style='color:#f00;'>Nieprawidłowy adres e-mail.</p>";
+    }
+  ?>
+</div>
+  </div>
+</section>
+
+ <!-- Kontakt -->
+  <section id="kontakt">
+    <div class="box contact-section">
+      <h2>Kontakt</h2>
+      <p>E-mail: <a href="mailto:irondeer.rentals@gmail.com" class="contact-email">irondeer.rentals@gmail.com</a></p>
+      <p>Tel: <a href="tel:+48603517548" class="contact-tel">+48 603 517 548</a></p>
+      <div class="map-container" data-nosnippet>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2380.2050712594486!2d16.7505203!3d53.148076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4701b5bdb7464d31%3A0x3a0a5f56959c2f6f!2sOgi%C5%84skiego%206%2C%2064-920%20Pi%C5%82a!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+    class="contact-map"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Lokalizacja Iron Deer w Pile">
+  </iframe>
+</div>
+    </div>
+  </section>
+
+  
+
+<section id="dokumenty">
+  <div class="box documents-section">
+    <h2 class="documents-title">Dokumenty</h2>
+    <p class="documents-description">Pobierz niezbędne pliki PDF</p>
+    <div class="documents-links">
+      <a href="https://drive.google.com/file/d/1Ho2QD11ZH4dIEL41hzVBHQwXh_NxLt4c/view?usp=sharing" 
+         target="_blank" class="btn-primary" rel="noopener noreferrer">📄 Umowa najmu</a>
+      <a href="https://drive.google.com/file/d/1fjXg1rPxe80Oh1sPGXsePBIKsVdN5DPj/view?usp=sharing"
+         target="_blank" class="btn-primary" rel="noopener noreferrer">📄 Protokół stanu</a>
+      <a href="https://drive.google.com/file/d/1OkjQ8vk3abzeov7YuPJ1Uk4he8e0PVCl/view?usp=sharing"
+         target="_blank" class="btn-primary" rel="noopener noreferrer">📄 Polityka prywatności</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="fade-in footer-content">
+      <div class="footer-icons">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61577793876159" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/irondeercustoms" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:irondeer.rentals@gmail.com" class="email" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="footer-copyright">© 2025 Iron Deer Rentals | Wynajem Klasycznych Motocykli</p>
+    </div>
+  </footer>
+
+  <!-- Skrypt JS -->
+  <script src="js/lightbox.js"></script>
+</body>
+</html>
