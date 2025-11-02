@@ -64,12 +64,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-        <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      <p>&copy; 2024 Iron Deer Rentals. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </footer>
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
