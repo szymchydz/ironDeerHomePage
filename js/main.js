@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
   const navLinksItems = document.querySelectorAll(".nav-link");
 
   if (!localStorage.getItem("cookieAccepted")) {
-    cookieBanner.style.display = "block";
+    cookieBanner.classList.add("show");
   }
 
   acceptButton.addEventListener("click", function() {
     localStorage.setItem("cookieAccepted", "true");
-    cookieBanner.style.display = "none";
+    cookieBanner.classList.remove("show");
   });
 
   hamburger.addEventListener("click", function() {
