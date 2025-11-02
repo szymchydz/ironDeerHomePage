@@ -393,8 +393,8 @@ footer {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 1rem 1.25rem;
+  background: rgba(0, 0, 0, 0);
+  padding: 0.5rem 0.5rem;
   text-align: center;
   z-index: 1000;
   display: flex;
@@ -402,7 +402,7 @@ footer {
   align-items: center;
 }
 .logo-img {
-  width: 100px;
+  width: 50px;
   height: auto;
 }
 .nav-links {
