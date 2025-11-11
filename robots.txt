@@ -1,13 +1,13 @@
-# robots.txt for www.irondeer.pl
+# robots.txt for irondeer.pl
 
 User-agent: *
 Allow: /
 
-# Blokada tylko sekcji administracyjnych (jeśli istnieją)
+# Blokada tylko sekcji administracyjnych
 Disallow: /admin/
 Disallow: /wp-admin/
 Disallow: /private/
 Disallow: /tmp/
 
-# Mapa strony (Sitemap)
-Sitemap: https://www.irondeer.pl/sitemap.xml
+# Mapa strony
+Sitemap: https://irondeer.pl/sitemap.xml
