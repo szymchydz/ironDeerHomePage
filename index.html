@@ -158,17 +158,6 @@
 
         <button type="submit" class="btn-primary">WYŚLIJ</button>
       </form>
-
-      <div class="form-feedback">
-      <?php
-        if (isset($_GET['error'])) {
-          echo "<p style='color:#f00;'>Wystąpił błąd podczas wysyłania.</p>";
-        }
-        if (isset($_GET['error']) && $_GET['error'] === 'invalid_email') {
-          echo "<p style='color:#f00;'>Nieprawidłowy adres e-mail.</p>";
-        }
-      ?>
-      </div>
     </div>
   </section>
 
@@ -227,7 +216,6 @@
   </footer>
 
   <!-- Skrypty JS -->
-  <script src="js/lightbox.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
