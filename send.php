@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $subject = "Nowa wiadomość z formularza Iron Deer";
 
   // Filtrowanie danych
-  $name = filter_var($_POST["Imię"] ?? '', FILTER_SANITIZE_STRING);
-  $phone = filter_var($_POST["Telefon"] ?? '', FILTER_SANITIZE_STRING);
+  $name = htmlspecialchars($_POST["Imię"] ?? '');
+  $phone = htmlspecialchars($_POST["Telefon"] ?? '');
   $email = filter_var(trim($_POST["Email"] ?? ''), FILTER_VALIDATE_EMAIL);
-  $message_content = filter_var($_POST["Wiadomość"] ?? '', FILTER_SANITIZE_STRING);
+  $message_content = htmlspecialchars($_POST["Wiadomość"] ?? '');
 
   // Walidacja e-maila
   if (!$email) {
@@ -64,12 +64,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-        <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      <p>&copy; 2024 Iron Deer Rentals. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </footer>
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>

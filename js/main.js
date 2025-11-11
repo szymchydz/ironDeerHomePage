@@ -59,6 +59,26 @@ document.addEventListener("DOMContentLoaded", function() {
   // Form validation
   const contactForm = document.querySelector("#formularz form");
   if (contactForm) {
+    // Form submission feedback
+    const urlParams = new URLSearchParams(window.location.search);
+    const formFeedback = document.createElement('div');
+    formFeedback.className = 'form-feedback';
+    const form = document.querySelector('.contact-form');
+
+    if (urlParams.has('success')) {
+      formFeedback.textContent = 'Wiadomość została wysłana pomyślnie!';
+      formFeedback.classList.add('success');
+      form.parentNode.insertBefore(formFeedback, form);
+    } else if (urlParams.has('error')) {
+      const errorType = urlParams.get('error');
+      if (errorType === 'invalid_email') {
+        formFeedback.textContent = 'Wystąpił błąd: nieprawidłowy format e-mail.';
+      } else {
+        formFeedback.textContent = 'Wystąpił błąd podczas wysyłania wiadomości.';
+      }
+      formFeedback.classList.add('error');
+      form.parentNode.insertBefore(formFeedback, form);
+    }
     contactForm.addEventListener("submit", (e) => {
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
