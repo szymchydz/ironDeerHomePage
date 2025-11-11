@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Coockie banner
+  // Cookie banner
   const cookieBanner = document.getElementById("cookie-banner");
   const acceptButton = document.getElementById("cookie-accept");
 
@@ -60,20 +60,23 @@ document.addEventListener("DOMContentLoaded", function() {
   const contactForm = document.querySelector("#formularz form");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
+      // Używamy poprawionych ID
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
+      
       if (!name || !phone || !email || !message) {
         e.preventDefault();
         alert("Proszę wypełnić wszystkie pola formularza.");
-        return !1;
+        return false;
       }
+      
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
         e.preventDefault();
         alert("Proszę podać prawidłowy adres email.");
-        return !1;
+        return false;
       }
     });
   }
@@ -82,39 +85,48 @@ document.addEventListener("DOMContentLoaded", function() {
 function initCustomLightbox() {
   const galleryLinks = document.querySelectorAll(".gallery a[data-lightbox]");
   if (galleryLinks.length === 0) return;
+  
   const lightbox = document.createElement("div");
   lightbox.className = "custom-lightbox";
   lightbox.setAttribute("role", "dialog");
   lightbox.setAttribute("aria-modal", "true");
   lightbox.setAttribute("aria-label", "Podgląd zdjęcia");
   lightbox.setAttribute("tabindex", "-1");
+  
   const lightboxContent = document.createElement("div");
   lightboxContent.className = "lightbox-content";
+  
   const img = document.createElement("img");
   img.alt = "Podgląd zdjęcia w pełnym rozmiarze";
+  
   const closeBtn = document.createElement("button");
   closeBtn.className = "lightbox-close";
   closeBtn.innerHTML = "×";
   closeBtn.setAttribute("aria-label", "Zamknij podgląd");
+  
   const prevBtn = document.createElement("button");
   prevBtn.className = "lightbox-nav lightbox-prev";
   prevBtn.innerHTML = "‹";
   prevBtn.setAttribute("aria-label", "Poprzednie zdjęcie");
+  
   const nextBtn = document.createElement("button");
   nextBtn.className = "lightbox-nav lightbox-next";
   nextBtn.innerHTML = "›";
   nextBtn.setAttribute("aria-label", "Następne zdjęcie");
+  
   lightboxContent.appendChild(img);
   lightbox.appendChild(lightboxContent);
   lightbox.appendChild(closeBtn);
   lightbox.appendChild(prevBtn);
   lightbox.appendChild(nextBtn);
   document.body.appendChild(lightbox);
+  
   let currentIndex = 0;
   const images = Array.from(galleryLinks).map((link) => ({
     src: link.href,
     alt: link.querySelector("img")?.alt || "",
   }));
+  
   function showImage(index) {
     currentIndex = index;
     img.src = images[index].src;
@@ -123,39 +135,48 @@ function initCustomLightbox() {
     document.body.style.overflow = "hidden";
     closeBtn.focus();
   }
+  
   function closeLightbox() {
     lightbox.classList.remove("show");
     document.body.style.overflow = "";
   }
+  
   function showNext() {
     currentIndex = (currentIndex + 1) % images.length;
     showImage(currentIndex);
   }
+  
   function showPrev() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     showImage(currentIndex);
   }
+  
   galleryLinks.forEach((link, index) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       showImage(index);
     });
   });
+  
   closeBtn.addEventListener("click", closeLightbox);
   closeBtn.addEventListener("keydown", (e) => {
     if (e.key === "Enter") closeLightbox();
   });
+  
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
   });
+  
   prevBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     showPrev();
   });
+  
   nextBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     showNext();
   });
+  
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("show")) return;
     switch (e.key) {
@@ -170,15 +191,19 @@ function initCustomLightbox() {
         break;
     }
   });
+  
   let touchStartX = 0;
   let touchEndX = 0;
+  
   lightbox.addEventListener("touchstart", (e) => {
     touchStartX = e.changedTouches[0].screenX;
   });
+  
   lightbox.addEventListener("touchend", (e) => {
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
   });
+  
   function handleSwipe() {
     const swipeThreshold = 50;
     if (touchEndX < touchStartX - swipeThreshold) showNext();
