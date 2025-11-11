@@ -80,6 +80,52 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+
+  const btnHome = document.getElementById('btnHome');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btnHome.classList.add('show');
+    } else {
+      btnHome.classList.remove('show');
+    }
+  });
+
+  btnHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener("scroll", () => {
+    const scroll = window.scrollY;
+
+    // Zoom: od 100% do max 400% (wolniejsze, płynniejsze powiększenie)
+    const zoom = Math.min(100 + scroll / 15, 400);
+
+    // Pozycja Y: utrzymujemy stabilną, delikatny spadek tylko na początku
+    const posY = scroll < 600 ? 50 - scroll / 80 : 42; // 50% → 42%
+
+    // Pozycja X: przesuwa się stopniowo w LEWO, by fokusować motocykl
+    // zaczyna np. od 30% (środek), schodzi do ok. 15%
+    let posX;
+
+    if (scroll < 400) {
+      // bak → silnik
+      posX = 40 - scroll / 40; // z 30% do ~20%
+    } else if (scroll < 800) {
+      // silnik → koło
+      posX = 20 - (scroll - 400) / 80; // z 20% do ~15%
+    } else if (scroll < 1200) {
+      // koło → lampa, minimalne przybliżenie, lekki ruch
+      posX = 15 - (scroll - 800) / 200; // 15% → 13%
+    } else {
+      // końcowy stan: zatrzymanie na motocyklu
+      posX = 13;
+    }
+
+    document.body.style.backgroundSize = `${zoom}%`;
+    document.body.style.backgroundPosition = `${posX}% ${posY}%`;
+  });
 });
 
 function initCustomLightbox() {
@@ -210,51 +256,3 @@ function initCustomLightbox() {
     if (touchEndX > touchStartX + swipeThreshold) showPrev();
   }
 }
-
-const btnHome = document.getElementById('btnHome');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      btnHome.classList.add('show');
-    } else {
-      btnHome.classList.remove('show');
-    }
-  });
-
-  btnHome.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-window.addEventListener("scroll", () => {
-  const scroll = window.scrollY;
-
-  // Zoom: od 100% do max 400% (wolniejsze, płynniejsze powiększenie)
-  const zoom = Math.min(100 + scroll / 15, 400);
-
-  // Pozycja Y: utrzymujemy stabilną, delikatny spadek tylko na początku
-  const posY = scroll < 600 ? 50 - scroll / 80 : 42; // 50% → 42%
-
-  // Pozycja X: przesuwa się stopniowo w LEWO, by fokusować motocykl
-  // zaczyna np. od 30% (środek), schodzi do ok. 15%
-  let posX;
-  
-
-  if (scroll < 400) {
-    // bak → silnik
-    posX = 40 - scroll / 40; // z 30% do ~20%
-  } else if (scroll < 800) {
-    // silnik → koło
-    posX = 20 - (scroll - 400) / 80; // z 20% do ~15%
-  } else if (scroll < 1200) {
-    // koło → lampa, minimalne przybliżenie, lekki ruch
-    posX = 15 - (scroll - 800) / 200; // 15% → 13%
-  } else {
-    // końcowy stan: zatrzymanie na motocyklu
-    posX = 13;
-  }
-
-  document.body.style.backgroundSize = `${zoom}%`;
-  document.body.style.backgroundPosition = `${posX}% ${posY}%`;
-});
-
