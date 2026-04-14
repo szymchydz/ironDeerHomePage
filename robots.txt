@@ -3,7 +3,7 @@
 User-agent: *
 Allow: /
 
-# Blokada tylko sekcji administracyjnych
+# Blokada tylko sekcji administracyjnych (na przyszłość)
 Disallow: /admin/
 Disallow: /wp-admin/
 Disallow: /private/
