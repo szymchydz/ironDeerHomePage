@@ -27,14 +27,14 @@
   <meta name="image" content="https://irondeer.pl/assets/Hero.jpg">
 
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="canonical" href="https://irondeer.pl/" />
 
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org/",
   "@type": "Product",
   "name": "Honda CB350F wynajem Piła – Iron Deer",
   "image": "https://irondeer.pl/assets/Hero.jpg",
@@ -56,19 +56,34 @@
 
 </head>
 <body>
-  <nav class="navbar">
+  <!-- Scroll Progress Bar-->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Preloader-->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="loader-bike">
+        <i class="fas fa-motorcycle"></i>
+      </div>
+      <p>Loading...</p>
+    </div>
+  </div>
+
+  <nav class="navbar" data-testid="main-navbar">
     <div class="logo">
-      <img src="assets/logo.png" alt="Logo Iron Deer" class="logo-img">
+      <a href="https://instagram.com/irondeercustoms" target="_blank" rel="noopener noreferrer" aria-label="Iron Deer Instagram" data-testid="logo-link">
+      <img src="assets/logo.png" alt="Logo Iron Deer" class="logo-img" data-testid="logo-image">
     </div>
     <ul class="nav-links">
-      <li><a href="#charakter" class="nav-link">Charakter</a></li>
-      <li><a href="#galeria" class="nav-link">Galeria</a></li>
-      <li><a href="#cennik" class="nav-link">Cennik</a></li>
-      <li><a href="#formularz" class="nav-link">Formularz</a></li>
-      <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
-      <li><a href="#dokumenty" class="nav-link">Dokumenty</a></li>
+      <li><a href="#charakter" class="nav-link" data-testid="nav-charakter">Charakter</a></li>
+      <li><a href="#zalety" class="nav-link" data-testid="nav-zalety">Zalety</a></li>
+      <li><a href="#galeria" class="nav-link" data-testid="nav-galeria">Galeria</a></li>
+      <li><a href="#cennik" class="nav-link" data-testid="nav-cennik">Cennik</a></li>
+      <li><a href="#opinie" class="nav-link" data-testid="nav-opinie">Opinie</a></li>
+      <li><a href="#faq" class="nav-link" data-testid="nav-faq">FAQ</a></li>
+      <li><a href="#formularz" class="nav-link" data-testid="nav-formularz">Kontakt</a></li>
     </ul>
-    <div class="hamburger">
+    <div class="hamburger" data-testid="hamburger-menu">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -76,118 +91,425 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <h1>IRON <span>DEER</span></h1>
-    <p>MOTOCYKLE NA PLAN | SESJE | REKLAMY | FILMY | EVENTY</p>
-    <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" rel="noopener noreferrer" class="btn-zarezerwuj">ZAREZERWUJ</a>
-    <a href="#charakter" class="scroll-down" aria-label="Przewiń w dół">
+  <section class="hero" id="top">
+    <h1 class="hero-title">IRON <span>DEER</span></h1>
+    <p class="hero-subtitle">MOTOCYKLE NA PLAN | SESJE | REKLAMY | FILMY | EVENTY</p>
+    <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" rel="noopener noreferrer" class="btn-zarezerwuj" data-testid="hero-book-btn">
+      <i class="fas fa-calendar-check"></i> ZAREZERWUJ TERAZ
+    </a>
+    <a href="#charakter" class="scroll-down" aria-label="Przewiń w dół" data-testid="scroll-down-btn">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="6 9 12 15 18 9"></polyline>
       </svg>
     </a>
   </section>
 
-  <!-- Charakter -->
-<section id="charakter">
-  <div class="box">
-    <h2>Charakter i Zastosowanie</h2>
-    <p>
-      Wyobraź sobie poranek w latach 70. — słońce przebija się przez mgłę, a na pustej drodze pojawia się ona: <strong>Honda CB350F z 1975 roku</strong>. Jej czterocylindrowy silnik mruczy z klasą, a smukła sylwetka w stylu café racer przyciąga spojrzenia. To nie tylko motocykl — to wehikuł czasu, który przenosi w epokę wolności, stylu i buntu.
-    </p>
-    <p>
-      Dziś ten klasyk wraca na scenę, gotowy by opowiedzieć Twoją historię. Idealny do sesji zdjęciowych, gdzie liczy się klimat i autentyczność. Doskonale odnajduje się w filmach, reklamach i teledyskach, dodając im duszy i charakteru. Na eventach staje się punktem centralnym — nie tylko eksponatem, ale bohaterem.
-    </p>
-    <ul>
-      <li><strong>Sesje zdjęciowe</strong> – moda, lifestyle, storytelling retro</li>
-      <li><strong>Produkcje wideo</strong> – filmy, reklamy, teledyski z duszą</li>
-      <li><strong>Eventy i prezentacje</strong> – stylowy akcent, który mówi więcej niż tysiąc słów</li>
-    </ul>
-  </div>
-</section>
+  <!-- Stats Section -->
+  <section class="stats-section" data-aos="fade-up">
+    <div class="stats-container"> 
+      <div class="stat-item" data-testid="stat-clients">
+        <i class="fas fa-users"></i>
+        <div class="stat-number" data-target="10">0</div>
+        <p>Zadowolonych Klientów</p>
+      </div>
+      <div class="stat-item" data-testid="stat-projects">
+        <i class="fas fa-film"></i>
+        <div class="stat-number" data-target="5">0</div>
+        <p>Zrealizowanych Projektów</p>
+      </div>
+      <div class="stat-item" data-testid="stat-experience">
+        <i class="fas fa-calendar-alt"></i>
+        <div class="stat-number" data-target="2">0</div>
+        <p>Lat Doświadczenia</p>
+      </div>
+      <div class="stat-item" data-testid="stat-rating">
+        <i class="fas fa-star"></i>
+        <div class="stat-number" data-target="5">0</div>
+        <p>Średnia Ocena</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Charakter -->
+  <section id="charakter" data-aos="fade-up">
+    <div class="box">
+      <h2>Charakter i Zastosowanie</h2>
+      <p>
+        Wyobraź sobie poranek w latach 70. — słońce przebija się przez mgłę, a na pustej drodze pojawia się ona: <strong>Honda CB350F z 1975 roku</strong>. Jej czterocylindrowy silnik mruczy z klasą, a smukła sylwetka w stylu café racer przyciąga spojrzenia. To nie tylko motocykl — to wehikuł czasu, który przenosi w epokę wolności, stylu i buntu.
+      </p>
+      <p>
+        Dziś ten klasyk wraca na scenę, gotowy by opowiedzieć Twoją historię. Idealny do sesji zdjęciowych, gdzie liczy się klimat i autentyczność. Doskonale odnajduje się w filmach, reklamach i teledyskach, dodając im duszy i charakteru. Na eventach staje się punktem centralnym — nie tylko eksponatem, ale bohaterem.
+      </p>
+      <ul>
+        <li><strong>Sesje zdjęciowe</strong> – moda, lifestyle, storytelling retro</li>
+        <li><strong>Produkcje wideo</strong> – filmy, reklamy, teledyski z duszą</li>
+        <li><strong>Eventy i prezentacje</strong> – stylowy akcent, który mówi więcej niż tysiąc słów</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Features / Zalety -->
+  <section id="zalety" data-aos="fade-up">
+    <div class="box">
+      <h2>Dlaczego Iron Deer?</h2>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="100" data-testid="feature-authentic">
+          <div class="feature-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Autentyczny Klasyk</h3>
+          <p>Oryginalna Honda CB350F z 1975 roku w doskonałym stanie technicznym i wizualnym</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="200" data-testid="feature-professional">
+          <div class="feature-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Profesjonalna Obsługa</h3>
+          <p>Doświadczony zespół gotowy wspierać Twój projekt od początku do końca</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="300" data-testid="feature-flexible">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Elastyczne Terminy</h3>
+          <p>Dostosujemy się do harmonogramu Twojej produkcji – również weekendy</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="400" data-testid="feature-transport">
+          <div class="feature-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3>Transport Gratis</h3>
+          <p>Bezpłatny transport do 15 km – dotrzemy tam, gdzie nas potrzebujesz</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="500" data-testid="feature-driver">
+          <div class="feature-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Kierowca/Statysta</h3>
+          <p>Możliwość wynajęcia kierowcy lub statysty do Twojego projektu</p>
+        </div>
+        <div class="feature-card" data-aos="zoom-in" data-aos-delay="600" data-testid="feature-insurance">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Ubezpieczenie</h3>
+          <p>Pełne ubezpieczenie OC i AC dla Twojego spokoju ducha</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Galeria -->
-  <section id="galeria">
+  <section id="galeria" data-aos="fade-up">
     <div class="box">
       <h2>Galeria</h2>
       <div class="gallery">
-        <a href="assets/gallery/gallery7.jpg" data-lightbox="gallery">
+        <a href="assets/gallery/gallery7.jpg" data-lightbox="gallery" data-testid="gallery-img-1">
           <img src="assets/gallery/gallery7.jpg" alt="Honda CB350F wynajem Piła – widok z boku – Iron Deer" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
         </a>
-        <a href="assets/gallery/gallery8.jpg" data-lightbox="gallery">
+        <a href="assets/gallery/gallery8.jpg" data-lightbox="gallery" data-testid="gallery-img-2">
           <img src="assets/gallery/gallery8.jpg" alt="Honda CB350F wynajem Piła – detale motocykla – Iron Deer" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
         </a>
-        <a href="assets/gallery/gallery9.jpg" data-lightbox="gallery">
+        <a href="assets/gallery/gallery9.jpg" data-lightbox="gallery" data-testid="gallery-img-3">
           <img src="assets/gallery/gallery9.jpg" alt="Honda CB350F wynajem Piła – zbliżenie na zbiornik i silnik – Iron Deer" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
         </a>
-        <a href="assets/gallery/gallery4.jpg" data-lightbox="gallery">
+        <a href="assets/gallery/gallery4.jpg" data-lightbox="gallery" data-testid="gallery-img-4">
           <img src="assets/gallery/gallery4.jpg" alt="Honda CB350F wynajem Piła – czterocylindrowy silnik – Iron Deer" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
         </a>
-        <a href="assets/gallery/gallery5.jpg" data-lightbox="gallery">
+        <a href="assets/gallery/gallery5.jpg" data-lightbox="gallery" data-testid="gallery-img-5">
           <img src="assets/gallery/gallery5.jpg" alt="Honda CB350F wynajem Piła – kokpit i kierownica – Iron Deer" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
         </a>
-        <a href="assets/gallery/gallery6.jpg" data-lightbox="gallery">
+        <a href="assets/gallery/gallery6.jpg" data-lightbox="gallery" data-testid="gallery-img-6">
           <img src="assets/gallery/gallery6.jpg" alt="Honda CB350F wynajem Piła – pełny widok motocykla – Iron Deer" loading="lazy">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Cennik -->
-  <section id="cennik">
+  <section id="cennik" data-aos="fade-up">
     <div class="box">
       <h2>Oferta i Cennik</h2>
-      <table>
-        <thead>
-          <tr><th>Usługa</th><th>Cena</th></tr>
-        </thead>
-        <tbody>
-          <tr><td data-label="Usługa">Sesja zdjęciowa (do 4h)</td><td data-label="Cena"><strong>150 zł</strong></td></tr>
-          <tr><td data-label="Usługa">Wynajem na cały dzień</td><td data-label="Cena"><strong>300 zł</strong></td></tr>
-          <tr><td data-label="Usługa">Obecność kierowcy/statysty</td><td data-label="Cena"><strong>100 zł/h</strong></td></tr>
-        </tbody>
-      </table>
-      <p class="transport-info">Transport: do 15 km gratis, powyżej 15 km – 1,30 zł/km</p>
-      <div class="cta-center">
-        <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" rel="noopener noreferrer" class="btn-zarezerwuj">ZAREZERWUJ</a>
+      <div class="pricing-grid">
+        <div class="pricing-card" data-aos="flip-up" data-aos-delay="100" data-testid="pricing-photo">
+          <div class="pricing-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3>Sesja Zdjęciowa</h3>
+          <div class="pricing-duration">do 4 godzin</div>
+          <div class="pricing-price"><span class="currency">zł</span><span class="amount">150</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Pełna dostępność motocykla</li>
+            <li><i class="fas fa-check"></i> Transport do 15km gratis</li>
+            <li><i class="fas fa-check"></i> Wsparcie techniczne</li>
+          </ul>
+          <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" rel="noopener noreferrer" class="btn-pricing" data-testid="book-photo-btn">Zarezerwuj</a>
+        </div>
+        <div class="pricing-card featured" data-aos="flip-up" data-aos-delay="200" data-testid="pricing-day">
+          <div class="popular-badge">Polecane</div>
+          <div class="pricing-icon">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+          <h3>Wynajem na Cały Dzień</h3>
+          <div class="pricing-duration">8 godzin</div>
+          <div class="pricing-price"><span class="currency">zł</span><span class="amount">300</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Cały dzień z motocyklem</li>
+            <li><i class="fas fa-check"></i> Transport do 15km gratis</li>
+            <li><i class="fas fa-check"></i> Wsparcie techniczne</li>
+            <li><i class="fas fa-check"></i> Elastyczne godziny</li>
+          </ul>
+          <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" rel="noopener noreferrer" class="btn-pricing" data-testid="book-day-btn">Zarezerwuj</a>
+        </div>
+        <div class="pricing-card" data-aos="flip-up" data-aos-delay="300" data-testid="pricing-driver">
+          <div class="pricing-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <h3>Kierowca/Statysta</h3>
+          <div class="pricing-duration">za godzinę</div>
+          <div class="pricing-price"><span class="currency">zł</span><span class="amount">100</span></div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Doświadczony kierowca</li>
+            <li><i class="fas fa-check"></i> Możliwość statystowania</li>
+            <li><i class="fas fa-check"></i> Znajomość motocykla</li>
+          </ul>
+          <a href="https://forms.gle/bUjeGcSkC1h93LrWA" target="_blank" rel="noopener noreferrer" class="btn-pricing" data-testid="book-driver-btn">Zarezerwuj</a>
+        </div>  
+      </div>
+      <p class="transport-info"><i class="fas fa-truck"></i> Transport: do 15 km gratis, powyżej 15 km – 1,30 zł/km</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="opinie" data-aos="fade-up">
+    <div class="box">
+      <h2>Co Mówią Nasi Klienci</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-right" data-aos-delay="100" data-testid="testimonial-1">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Profesjonalna obsługa i piękny motocykl! Nasza sesja zdjęciowa wypadła rewelacyjnie. Polecam każdemu, kto szuka autentycznego klimatu lat 70."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="author-info">
+              <strong>Anna K.</strong>
+              <span>Fotograf Komercyjny</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200" data-testid="testimonial-2">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Świetny kontakt, elastyczność i terminowość. Motocykl w idealnym stanie, doskonale sprawdził się na naszym planie filmowym. Na pewno wrócimy!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="author-info">
+              <strong>Marek S.</strong>
+              <span>Producent Filmowy</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos="fade-left" data-aos-delay="300" data-testid="testimonial-3">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Najlepsza decyzja dla naszego teledysku! Honda CB350F dodała niepowtarzalnego charakteru. Obsługa na najwyższym poziomie."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="author-info">
+              <strong>Piotr W.</strong>
+              <span>Reżyser Teledysków</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" data-aos="fade-up">
+    <div class="box">
+      <h2>Najczęściej Zadawane Pytania</h2>
+      <div class="faq-container">
+        <div class="faq-item" data-testid="faq-item-1">
+          <div class="faq-question">
+            <h3>Jak wygląda proces rezerwacji?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Proces jest prosty: wypełnij formularz rezerwacyjny online lub skontaktuj się z nami telefonicznie. Potwierdzimy dostępność terminu, ustalimy szczegóły i podpiszemy umowę najmu. Wszystko możemy załatwić zdalnie!</p>
+          </div>
+        </div>
+        <div class="faq-item" data-testid="faq-item-2">
+          <div class="faq-question">
+            <h3>Czy motocykl jest ubezpieczony?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Tak, motocykl posiada pełne ubezpieczenie OC i AC. Dla Twojego bezpieczeństwa i spokoju ducha, wszystkie formalności są dopełnione.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-testid="faq-item-3">
+          <div class="faq-question">
+            <h3>Czy mogę wypożyczyć motocykl na weekend?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Oczywiście! Oferujemy elastyczne terminy wynajmu, w tym również weekendy. Skontaktuj się z nami, aby omówić szczegóły dostępności.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-testid="faq-item-4">
+          <div class="faq-question">
+            <h3>Jak daleko może dotrzeć transport?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Transport do 15 km od Piły jest gratis. Jeśli potrzebujesz dowozu na dalszą odległość, koszt wynosi 1,30 zł za każdy dodatkowy kilometr.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-testid="faq-item-5">
+          <div class="faq-question">
+            <h3>Czy mogę samodzielnie prowadzić motocykl?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Wynajem dedykowany jest głównie do celów komercyjnych (sesje, filmy, eventy) bez jazdy. Jeśli potrzebujesz kierowcę lub statysty, oferujemy taką usługę w cenie 100 zł/h.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-testid="faq-item-6">
+          <div class="faq-question">
+            <h3>Jakie dokumenty są potrzebne?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Wystarczy dowód osobisty lub inny dokument tożsamości do podpisania umowy najmu. Wszystkie dokumenty (umowa, protokół stanu, polityka prywatności) są dostępne w sekcji Dokumenty.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Formularz -->
-  <section id="formularz">
+  <section id="formularz" data-aos="fade-up">
     <div class="box form-section">
       <h2 class="form-title">Formularz Kontaktowy</h2>
-      <form action="send.php" method="POST" enctype="multipart/form-data" class="contact-form">
+      <p class="form-subtitle">Wypełnij formularz, a my odpowiemy w ciągu 24 godzin</p>
+      <form action="send.php" method="POST" enctype="multipart/form-data" class="contact-form" id="contactForm" data-testid="contact-form">
         <!-- Honeypot -->
-        <input type="text" name="firma" style="display:none">
+        <input type="text" name="firma" style="display:none" tabindex="-1" autocomplete="off">
 
-        <label for="name" class="sr-only">Imię</label>
-        <input type="text" id="name" name="Imię" placeholder="Imię" required class="form-input">
+        <div class="form-group">
+          <input type="text" id="name" name="Imię" placeholder="" required class="form-input" data-testid="form-name">
+          <label for="name" class="floating-label">Imię *</label>
+          <span class="form-error" id="nameError"></span>
+        </div>
 
-        <label for="phone" class="sr-only">Telefon</label>
-        <input type="tel" id="phone" name="Telefon" placeholder="Telefon" required class="form-input">
+        <div class="form-group">
+          <input type="tel" id="phone" name="Telefon" placeholder="" required class="form-input" data-testid="form-phone">
+          <label for="phone" class="floating-label">Telefon *</label>
+          <span class="form-error" id="phoneError"></span>
+        </div>
 
-        <label for="email" class="sr-only">Email</label>
-        <input type="email" id="email" name="Email" placeholder="Email" required class="form-input">
+        <div class="form-group">
+          <input type="email" id="email" name="Email" placeholder="" required class="form-input" data-testid="form-email">
+          <label for="email" class="floating-label">Email *</label>
+          <span class="form-error" id="emailError"></span>
+        </div>
 
-        <label for="message" class="sr-only">Wiadomość</label>
-        <textarea id="message" name="Wiadomość" placeholder="Wiadomość" required class="form-input form-textarea"></textarea>
+        <div class="form-group">
+          <textarea id="message" name="Wiadomość" placeholder="" required class="form-input form-textarea" data-testid="form-message"></textarea>
+          <label for="message" class="floating-label">Wiadomość *</label>
+          <span class="form-error" id="messageError"></span>
+        </div>
 
-        <label for="attachment" class="sr-only">Załącznik</label>
-        <input type="file" id="attachment" name="Załącznik" class="form-control">
+        <div class="form-group">
+          <label for="attachment" class="file-label">
+            <i class="fas fa-paperclip"></i> Dodaj załącznik (opcjonalnie)
+          </label>
+          <input type="file" id="attachment" name="Załącznik" class="form-file" data-testid="form-attachment">
+          <span class="file-name" id="fileName"></span>
+        </div>
 
-        <button type="submit" class="btn-primary">WYŚLIJ</button>
+        <button type="submit" class="btn-primary btn-submit" data-testid="form-submit">
+          <span class="btn-text">WYŚLIJ WIADOMOŚĆ</span>
+          <span class="btn-loader"></span>
+        </button>
       </form>
     </div>
   </section>
 
   <!-- Kontakt -->
-  <section id="kontakt">
+  <section id="kontakt" data-aos="fade-up">
     <div class="box contact-section">
-      <h2>Kontakt</h2>
-      <p>E-mail: <a href="mailto:irondeer.rentals@gmail.com" class="contact-email">irondeer.rentals@gmail.com</a></p>
-      <p>Tel: <a href="tel:+48603517548" class="contact-tel">+48 603 517 548</a></p>
+      <h2>Informacje Kontaktowe</h2>
+      <div class="contact-info-grid">
+        <div class="contact-info-item" data-testid="contact-email">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:irondeer.rentals@gmail.com" class="contact-link">irondeer.rentals@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-info-item" data-testid="contact-phone">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Telefon</strong>
+            <a href="tel:+48603517548" class="contact-link">+48 603 517 548</a>
+          </div>
+        </div>
+        <div class="contact-info-item" data-testid="contact-location">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Lokalizacja</strong>
+            <span>Piła, Wielkopolska</span>
+          </div>
+        </div>
+        <div class="contact-info-item" data-testid="contact-hours">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Godziny dostępności</strong>
+            <span>Pn-Nd: 8:00 - 20:00</span>
+          </div>
+        </div>
+      </div>
       <div class="map-container" data-nosnippet>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2380.2050712594486!2d16.7505203!3d53.148076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4701b5bdb7464d31%3A0x3a0a5f56959c2f6f!2sOgi%C5%84skiego%206%2C%2064-920%20Pi%C5%82a!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
@@ -202,46 +524,73 @@
   </section>
 
   <!-- Dokumenty -->
-  <section id="dokumenty">
+  <section id="dokumenty" data-aos="fade-up">
     <div class="box documents-section">
-      <h2 class="documents-title">Dokumenty</h2>
-      <p class="documents-description">Pobierz niezbędne pliki PDF</p>
+      <h2 class="documents-title">Dokumenty do Pobrania</h2>
+      <p class="documents-description">Pobierz niezbędne dokumenty przed wynajmem</p>
       <div class="documents-links">
-        <a href="https://drive.google.com/file/d/1Ho2QD11ZH4dIEL41hzVBHQwXh_NxLt4c/view?usp=sharing" 
-           target="_blank" rel="noopener noreferrer" class="btn-primary">📄 Umowa najmu</a>
+        <a href="https://drive.google.com/file/d/17XAKSTMvEX3PW2nhMwXv9fon7F5QWLex/view?usp=sharing" 
+           target="_blank" rel="noopener noreferrer" class="btn-document" data-testid="doc-contract">
+           <i class="fas fa-file-contract"></i> Umowa najmu
+        </a>
         <a href="https://drive.google.com/file/d/1fjXg1rPxe80Oh1sPGXsePBIKsVdN5DPj/view?usp=sharing"
-           target="_blank" rel="noopener noreferrer" class="btn-primary">📄 Protokół stanu</a>
+           target="_blank" rel="noopener noreferrer" class="btn-document" data-testid="doc-protocol">
+           <i class="fas fa-file-alt"></i> Protokół stanu
+        </a>
         <a href="https://drive.google.com/file/d/1OkjQ8vk3abzeov7YuPJ1Uk4he8e0PVCl/view?usp=sharing"
-           target="_blank" rel="noopener noreferrer" class="btn-primary">📄 Polityka prywatności</a>
+           target="_blank" rel="noopener noreferrer" class="btn-document" data-testid="doc-privacy">
+           <i class="fas fa-user-shield"></i> Polityka prywatności
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Cookie Banner -->
   <div id="cookie-banner" class="cookie-banner">
-    <p>Ta strona korzysta z ciasteczek, aby zapewnić najlepszą jakość usług. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie. <a href="https://drive.google.com/file/d/1OkjQ8vk3abzeov7YuPJ1Uk4he8e0PVCl/view?usp=sharing" target="_blank" rel="noopener noreferrer">Dowiedz się więcej</a></p>
-    <button id="cookie-accept" class="btn-primary">Akceptuję</button>
+    <div class="cookie-content">
+      <i class="fas fa-cookie-bite"></i>
+      <p>Ta strona korzysta z ciasteczek, aby zapewnić najlepszą jakość usług. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie. <a href="https://drive.google.com/file/d/1OkjQ8vk3abzeov7YuPJ1Uk4he8e0PVCl/view?usp=sharing" target="_blank" rel="noopener noreferrer">Dowiedz się więcej</a></p>
+    </div>
+    <button id="cookie-accept" class="btn-primary" data-testid="cookie-accept">Akceptuję</button>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/48603517548" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Kontakt WhatsApp" data-testid="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll to Top Button -->
+  <a href="#top" id="btnHome" class="scroll-up" aria-label="Powrót na górę" data-testid="scroll-to-top">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <!-- Success/Error Modal -->
+  <div class="modal" id="messageModal" data-testid="message-modal">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalMessage"></p>
+    </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <div class="fade-in footer-content">
+    <div class="footer-content">
       <div class="footer-icons">
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61577793876159" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/irondeercustoms" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:irondeer.rentals@gmail.com" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube" data-testid="footer-youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61577793876159" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook" data-testid="footer-facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/irondeercustoms" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram" data-testid="footer-instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:irondeer.rentals@gmail.com" class="email" aria-label="Email" data-testid="footer-email"><i class="fas fa-envelope"></i></a>
       </div>
       <p class="footer-copyright">© 2025 Iron Deer Rentals | Wynajem Klasycznych Motocykli</p>
+      <p class="footer-made-with">Made with <i class="fas fa-heart"></i> in Piła</p>
     </div>
   </footer>
 
- <a href="#top" id="btnHome" class="scroll-up" aria-label="Powrót na górę">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="18 15 12 9 6 15"></polyline>
-  </svg>
-</a>
-  <!-- Skrypty JS -->
+  <!-- Scripts -->
   <script src="js/main.js" defer></script>
 </body>
 </html>
